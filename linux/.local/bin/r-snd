@@ -1,0 +1,4 @@
+#!/usr/bin/env rc
+
+doas rcctl set sndiod flags -f rsnd/$1
+doas rcctl restart sndiod

@@ -1,0 +1,32 @@
+#!/usr/bin/env rc
+
+trash=(
+                  '.pki'
+                '.cache'
+              '.viminfo'
+                  '.var'
+             '.vmodules'
+         '.bash_history'
+    '.ratpoison_history'
+              '.ansible'
+             '.magefile'
+                 *.core
+                  *.png
+                  *.jar
+                  *.pdf
+                  *.txt
+                  *.zip
+            '.minecraft'
+            '.tlauncher'
+              '.openjfx'
+                '.sndio'
+             'Downloads'
+      '.xsession-errors'
+                '.julia'
+          '.terraform.d'
+              '.lesshst' 
+            '.wget-hsts' 
+         '.bash_history'
+)
+
+for (t in $trash) rm -rf $HOME/$t

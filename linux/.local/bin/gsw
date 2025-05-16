@@ -1,0 +1,4 @@
+#!/usr/bin/env rc
+
+# Generate password
+openssl rand -hex $*

@@ -1,0 +1,31 @@
+set shell bash
+set icons
+set shellopts '-eu'
+set scrolloff 10
+set cursorpreviewfmt ""
+set info size
+#set number
+
+set previewer '~/.config/lf/prv'
+
+map <enter> shell
+map . set hidden!
+
+map o &mimeopen $f
+map O $mimeopen --ask $f
+
+cmd open ${{
+    shopt -s extglob
+
+    use() { $@ "$f" &>/dev/null; }
+
+    case `file --mime-type -Lb "$f"` in
+        video/*)      use mpv  ;;
+        image/*)      use sxiv ;;
+        audio/*)      use mpv --no-video ;;
+        image/x-xcf)  use gimp ;;
+        application/*officedocument*) use libreoffice ;;
+        application/@(pdf|vnd|epub|epub+zip)) use zathura --fork ;;
+        *) nvim "$fx" ;;
+    esac
+}}

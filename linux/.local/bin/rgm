@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# go mod rename
+
+sed "1s/^.*$/module $1/" go.mod

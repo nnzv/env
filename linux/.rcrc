@@ -1,0 +1,51 @@
+# enviroment variables
+H=$HOME
+G=$H/.local/git
+_JAVA_AWT_WM_NONREPARENTING=1 
+BROWSER=librewolf
+LESSHISTFILE=-
+mode=vi
+TEXMFHOME='/usr/share/texmf-site/tex/latex'
+JAVA_HOME='/usr/lib64/openjdk-17'
+FZF_DEFAULT_OPTS='--no-mouse --no-multi --cycle --no-hscroll --border=none --no-unicode --info=hidden --no-scrollbar --prompt="? "  --color 16 --no-bold --history-size 1'
+GIT_TERMINAL_PROMPT=1
+PYTHONSTARTUP=$H/.pythonrc
+GPG_TTY=`{tty}
+GIT_PAGER=less
+PYTHONDONTWRITEBYTECODE=1
+TMPDIR=/var/tmp
+WORLD=/var/lib/portage/world
+PKGUSE=/etc/portage/package.use
+MAKECONF=/etc/portage/make.conf
+prompt='% '
+CGO_ENABLED=1
+path=( /usr/X11R6/bin /bin /usr/bin $H/go/bin /usr/sbin/ /usr/local/bin/ /usr/bin /sbin $H/.local/bin )
+GOPATH=$H/go
+
+#gsettings set org.gnome.desktop.privacy remember-recent-files false
+rm -f /home/nzv/.local/share/recently-used.xbel
+
+# aliases :)
+fn dk    {        docker $* }
+fn vi    {          nvim $* }
+fn bc    { builtin bc -q $* }
+fn vim   {          nvim $* }
+fn  t    {     terraform $* }
+fn  g    {           git $* }
+fn  a    {           aws $* }
+fn ns    {     doas nvim $* }
+fn ql    {         qlist $* }
+fn kb    {      minikube $* }
+fn ap    { ansible-playbook $* }
+fn e     {   doas emerge $* }
+fn bk    { yq eval '.books[] | (": " + .title + "\n> " + .url + "\n+ " + .description + "\n")' usr/share/books.yml }
+fn k     {       minikube kubectl -- $* }
+# fn k     {       kubectl $* }
+fn es    {  doas eselect $* }
+fn qo    {          qlop $* }
+fn eq    {        equery $* }
+fn eb    {   doas ebuild $* }
+fn r     {  builtin . $H/.rcrc }
+fn rm    { builtin rm '-iv' $* }
+fn  h    {  date '+%a %b %d %r %G' }
+# fn fcn   { find . -maxdepth 1 -type f ! -type l -print0 | xargs -0 -I {} mv {} .cache/

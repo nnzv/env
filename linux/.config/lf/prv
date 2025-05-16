@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+case `file --mime-type -Lb "$1"` in
+    text/html)
+        lynx '-width='$4 '-display_charset=utf-8' -dump "$1"
+    ;;
+    text/troff)
+        man -l "$1"
+    ;;
+    text/* | application/json) 
+        cat "$1"
+    ;;
+esac

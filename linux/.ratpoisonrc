@@ -1,0 +1,13 @@
+escape Super_L
+set border 0
+
+set bg_color #1d1f21
+set fg_color #d8dee9
+set font "CozetteVector:size=10"
+
+bind d delete
+bind q quit
+bind a exec alacritty
+bind p exec dmenu_run
+set historysize 0
+startup_message off

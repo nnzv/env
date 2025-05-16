@@ -1,0 +1,54 @@
+[user]
+    name  = Enzo Venturi
+    email = nzventuri@proton.me
+    
+[init]
+    defaultBranch = main
+
+[core]
+    editor = nvim
+	pager = 
+    excludesfile = ~/.gitignore
+
+[alias]
+    rb = rebase
+    cp = clone --depth=1 -j8
+    dd = add -v
+    fu = fetch --unshalow
+    us = status -sb
+    sn = push --force-with-lease
+    cd = checkout
+    # push to gitlab, srht and github repos
+    fr = "!rc -c 'for (i in lb ht gh) g sh $i'"
+    it = commit -v
+    cd = checkout
+    rd = remote add
+    ff = diff
+    no = reset --soft HEAD^
+    ll = pull -q
+    sh = push -q
+    ls = log --pretty=format:'%C(yellow)%h%Creset %s'
+    fuck = reset --hard
+
+[push]
+    # push only to the current branch
+    default = simple
+
+[diff]
+    tool  = vimdiff
+
+[http]
+    cookiefile = /home/nzv/.gitcookies
+
+; [gpg]
+; 	program = gpg
+
+; [commit]
+; 	gpgsign = true
+; 	gpsign = true
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential

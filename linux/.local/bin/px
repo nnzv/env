@@ -1,0 +1,4 @@
+#!/usr/bin/env rc
+
+# dmenu purposes
+$TERM -e pulsemixer $*
